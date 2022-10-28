@@ -1,0 +1,32 @@
+{
+  "posts": [
+    {
+      "firstname": "ashish ",
+      "lastname": "mane",
+      "email": "ashish11@some.com",
+      "salary": "3455555",
+      "mobile": "2344366",
+      "id": 1
+    },
+    {
+      "firstname": "akash",
+      "lastname": "dekate",
+      "email": "akashdeokate@gmail.com",
+      "salary": "30000",
+      "mobile": "9511443321",
+      "id": 2
+    },
+    {
+      "firstname": "asxasxas",
+      "lastname": "acs",
+      "email": "ashish11@some.com",
+      "salary": "111",
+      "mobile": "11",
+      "id": 3
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

@@ -1,0 +1,100 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark shadow-lg">
+  <div class="container-fluid">
+    <h1 class="text-white display-6">Crud Operation</h1>
+    <div class="d-flex">
+      <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="clickAdd()">
+        Add Employee
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+  <div class="col">
+    <table class="table table-bordered mt-1 table-striped table-secondary table-hover text-center">
+      <thead>
+        <tr >
+          <th scope="col">Employee Id</th>
+          <th scope="col">Frist Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Email Id</th>
+          <th scope="col">Mobile No.</th>
+          <th scope="col">Salary</th>
+          <th scope="col">Acrion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let Employee of data">
+          <td>{{ Employee.id }}</td>
+          <td>{{ Employee.firstname }}</td>
+          <td>{{ Employee.lastname }}</td>
+          <td>{{ Employee.email }}</td>
+          <td>{{ Employee.mobile }}</td>
+          <td>{{ Employee.salary }}</td>
+          <!-- <td>{{Employee.name}}</td> -->
+    
+          <td>
+            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+            (click)="onEdit(Employee)"  >
+              Edit
+            </button>
+            <button class="btn btn-sm btn-secondary ms-1" (click)="deletEmployee(Employee)">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header justify-content-center">
+        <h5 class="display-5 modal-title text-uppercase" id="staticBackdropLabel">Employee Details</h5>
+        
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formvalue">
+          <div class="mb-3">
+            <label for="exampleInput" class="form-label">First Name <span style="color:red;">*</span></label>
+            <input type="text" class="form-control rounded-pill a" id="exampleInput" formControlName="firstname" />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Last Name <span style="color:red;">*</span></label>
+            <input type="text" class="form-control rounded-pill a" id="exampleInputPassword1" formControlName="lastname" />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword" class="form-label">Email ID <span style="color:red;">*</span></label>
+            <input type="email" class="form-control rounded-pill a" id="exampleInputPassword" formControlName="email" />
+          </div>
+          <div class="mb-3">
+            <label for="example" class="form-label">Mobile Number <span style="color:red;">*</span></label>
+            <input type="text" class="form-control rounded-pill a" id="example" formControlName="mobile" />
+          </div>
+          <div class="mb-3">
+            <label for="Input" class="form-label">Salary <span style="color:red;">*</span></label>
+            <input type="text" class="form-control rounded-pill a" id="Input" formControlName="salary" />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer justify-content-evenly">
+        <button type="button" class="btn btn-primary rounded-pill w-25" (click)="postEmployeeDetails()" *ngIf="showadd" >
+          Add
+        </button>
+        <button type="button" class="btn btn-secondary rounded-pill w-25 " id="cancel" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary rounded-pill" (click)="updateEmployee()" *ngIf="showupdate">
+          Update
+                 </button>
+      </div>
+    </div>
+  </div>
+</div>
