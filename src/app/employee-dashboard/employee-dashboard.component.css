@@ -2,10 +2,14 @@
   text-transform: capitalize;
 }
 .a:hover{
-    box-shadow: 0px 0px 15px -8px black;
+  box-shadow: 0px 0px 18px 2px rgb(60 82 99);
+  outline: none;
 }
 label{
-    font-size: 15px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-weight: 600;
+    font-size: 20px;
+    color: white;
+    font-weight: 500;
+}
+.modal-content{
+  background: linear-gradient(rgb(68 149 216),rgb(27 33 36 / 77%));
 }

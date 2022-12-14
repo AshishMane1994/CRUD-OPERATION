@@ -1,0 +1,18 @@
+.container{
+    height: 100vh;
+}
+.size{
+    border: 1px solid;
+    width: 13rem;
+    height: 13rem;
+}
+.container1{
+width: 70%;
+height: 70%;
+margin: auto;
+margin-top: 7rem;
+}
+.height{
+    height: 100vh;
+
+}

@@ -14,32 +14,30 @@ import { EmployeeModel } from './emoloyee-dashboard.model';
   styleUrls: ['./employee-dashboard.component.css'],
 })
 export class EmployeeDashboardComponent implements OnInit {
-  // formvalue: FormGroup = new FormGroup({
-  //   firstname: new FormControl(''),
-  //   lastname: new FormControl(''),
-  //   email: new FormControl(''),
-  //   salary: new FormControl(''),
-  //   mobile: new FormControl(''),
-
-  // });
+  abc=""
   formvalue!: FormGroup;
   employeeModelObj: EmployeeModel = new EmployeeModel();
   constructor(private fb: FormBuilder, private api: ApiService) {}
   data!: any;
   ngOnInit(): void {
     this.formvalue = this.fb.group({
-      firstname: [
-        '     Validators.required,  Validators.minLength(6),  Validators.maxLength(20)  ',
-      ],
-      lastname: [''],
-      email: [''],
-      salary: [''],
-      mobile: [''],
+      firstname:[''],
+      lastname: ['',[Validators.required]],
+      email: ['',[Validators.required]],
+      salary: ['',[Validators.required]],
+      mobile: ['',[Validators.required]],
     });
     this.getAllEmpoloyee();
+    
   }
-  
-
+  submitted=false;
+  // showChildModals(){
+  //   this.api.childModal=true;
+  // }
+  get f() {
+    return this.formvalue.controls;
+  }
+ 
   postEmployeeDetails() {
    
     this.employeeModelObj.firstname = this.formvalue.value.firstname;
@@ -70,14 +68,15 @@ export class EmployeeDashboardComponent implements OnInit {
   }
 
   deletEmployee(Employee: any) {
+
     this.api.deletEmployee(Employee.id).subscribe((res) => {
-    
       alert('Employee Deleted');
       this.getAllEmpoloyee();
     });
   }
 
   onEdit(Employee: any) {
+    this.abc="gayatri"
     this.showadd = false;
     this.showupdate = true;
     this.employeeModelObj.id = Employee.id;
@@ -105,11 +104,13 @@ export class EmployeeDashboardComponent implements OnInit {
   }
   showadd!: boolean;
   showupdate!: boolean;
-  submitted = false;
   clickAdd() {
+    this.abc="hjhbcdhbcghdsvc"
     this.formvalue.reset();
     this.showadd = true;
     this.showupdate = false;
   }
-  
-}
+ 
+
+    }
+

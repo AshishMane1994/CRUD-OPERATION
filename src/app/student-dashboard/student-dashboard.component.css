@@ -1,0 +1,9 @@
+h1, hr{
+    rotate: 90deg;
+    position: relative;
+    top: 20px;
+    border: none;
+    height: 12px;
+    background: black;
+    margin-bottom: 50px;
+}

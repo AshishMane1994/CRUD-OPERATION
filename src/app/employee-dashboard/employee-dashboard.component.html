@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-dark shadow-lg">
+<nav class="navbar navbar-expand-lg navbar-light bg-danger ">
   <div class="container-fluid">
     <h1 class="text-white display-6">Crud Operation</h1>
     <div class="d-flex">
@@ -8,10 +8,10 @@
     </div>
   </div>
 </nav>
-<div class="container">
-  <div class="row">
-  <div class="col">
-    <table class="table table-bordered mt-1 table-striped table-secondary table-hover text-center">
+
+<div class="container-fluid">
+  <div class="row  table-responsive">
+    <table class="table  table-bordered table-striped table-secondary table-hover text-center">
       <thead>
         <tr >
           <th scope="col">Employee Id</th>
@@ -46,7 +46,7 @@
       </tbody>
     </table>
   </div>
-  </div>
+
 </div>
 
 
@@ -57,15 +57,17 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header justify-content-center">
-        <h5 class="display-5 modal-title text-uppercase" id="staticBackdropLabel">Employee Details</h5>
+        <h5 class="display-5 modal-title text-uppercase" id="staticBackdropLabel">{{abc}}</h5>
         
       </div>
       <div class="modal-body">
         <form [formGroup]="formvalue">
           <div class="mb-3">
             <label for="exampleInput" class="form-label">First Name <span style="color:red;">*</span></label>
-            <input type="text" class="form-control rounded-pill a" id="exampleInput" formControlName="firstname" />
+            <input type="text"  class="form-control rounded-pill a" id="exampleInput" formControlName="firstname" />
           </div>
+          <!-- validation  -->
+
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Last Name <span style="color:red;">*</span></label>
             <input type="text" class="form-control rounded-pill a" id="exampleInputPassword1" formControlName="lastname" />
@@ -79,7 +81,7 @@
             <input type="text" class="form-control rounded-pill a" id="example" formControlName="mobile" />
           </div>
           <div class="mb-3">
-            <label for="Input" class="form-label">Salary <span style="color:red;">*</span></label>
+            <label for="Input" class="form-label">Salary <span style="color:red;">&#8377;*</span></label>
             <input type="text" class="form-control rounded-pill a" id="Input" formControlName="salary" />
           </div>
         </form>
